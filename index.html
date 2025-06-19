@@ -107,24 +107,42 @@
     }
 
     .audio-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1.5rem;
-    margin-top: 2rem;
-  }
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
 
-    .audio-item {
-      background: var(--blue-light);
-      padding: 1rem;
-      border-radius: 8px;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-    }
+.audio-item {
+  background: #f0f4ff;
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%; /* wichtig für gleich hohe Kacheln */
+}
 
-    .audio-item p {
-      margin-bottom: 0.5rem;
-      font-weight: bold;
-      color: var(--text);
-    }
+.audio-item p {
+  font-weight: 400;
+  margin-bottom: 0.75rem;
+  line-height: 1.5;
+  flex-grow: 1;
+}
+
+.audio-item p strong {
+  font-weight: 700;
+}
+
+.audio-item audio {
+  width: 100%;
+  height: 36px;
+  margin-top: auto;
+}
+
+
+ 
 
     .image-row {
       display: flex;
@@ -178,10 +196,10 @@
   <h2>Themen aus dem Projekt: Courage? Courage! - Von der Diskriminierung in der Welt zur Antidiskriminierung am KWR</h2>
   <div class="btn-grid">
     <button onclick="toggleSection('daten')">Quantitative Daten</button>
-    <button onclick="toggleSection('erfahrungen')">Erfahrungen</button>
-    <button onclick="toggleSection('courage')">Courage</button>
-    <button onclick="toggleSection('frauenrechte')">Frauenrechte &amp; Gleichbehandlung</button>
-    <button onclick="toggleSection('massnahmen')">Maßnahmen am KWR</button>
+    <button onclick="toggleSection('erfahrungen')">Erfahrungen von betroffenen Schüler:innen</button>
+    <button onclick="toggleSection('courage')">Vorhande Probleme in Verbindung mit Courage zeigen am KWR</button>
+    <button onclick="toggleSection('frauenrechte')">Podcast zu Frauenrechten &amp; Gleichbehandlung</button>
+    <button onclick="toggleSection('massnahmen')">Fragen und Anregungen von Schüler:innen am KWR</button>
   </div>
 
   <div id="daten" class="content-section">
@@ -203,33 +221,33 @@
       </div>
   
       <!-- Zwei Balkendiagramme untereinander -->
-      <div class="image-row">
+      
         <div class="full-width">
             <figure class="bildblock">
                 <figcaption><strong>Fragestellung:</strong> Kannst du einordnen, aus welchem Grund die Beleidigung/Ausgrenzung gegenüber dir passiert ist?</figcaption>
-                <img src="Umfrage JPGs/02 Diskriminierungsgründe.jpg" alt="Balkendiagramm 1">
+                <img src="Umfrage JPGs/02 Diskriminierungsgründe.jpg" alt="Balkendiagramm 1">
             </figure>
         </div>
         <div class="full-width">
             <figure class="bildblock">
                 <figcaption><strong>Fragestellung:</strong> Kannst du einordnen, aus welchem Grund die Beleidigung/Ausgrenzung einer anderen Person passiert ist?</figcaption>
-                <img src="Umfrage JPGs/05 Beobachtete Diskriminierungsgründe.jpg" alt="Balkendiagramm 1">
+                <img src="Umfrage JPGs/05 Beobachtete Diskriminierungsgründe.jpg" alt="Balkendiagramm 1">
             </figure>
         </div>      
-      </div> 
+     
   
       <!-- Ein Balkendiagramm und ein Kreisdiagramm nebeneinander -->
     <div class="image-row">
         <div class="half-width">
             <figure class="bildblock">
-                <figcaption><strong>Fragestellung:</strong> Hast du auf die Beleidigung bzw. Ausgrenzung reagiert?</figcaption>
-                <img src="Umfrage JPGs/03 Reaktionen der Schülerinnen.jpg" alt="Balkendiagramm 1">
+                <figcaption><strong>Fragestellung:</strong> Hast du auf die Beleidigung/Ausgrenzung reagiert?</figcaption>
+                <img src="Umfrage JPGs/03 Reaktionen der Schülerinnen.jpg" alt="Balkendiagramm 1">
             </figure>
         </div>
         <div class="half-width">
             <figure class="bildblock">
                 <figcaption><strong>Fragestellung:</strong> Zusammenfassung der betroffenen Schüler:innen pro Jahrgangsstufen</figcaption>
-                <img src="Umfrage JPGs/06 Betroffene Schülerinnen.jpg" alt="Balkendiagramm 1">
+                <img src="Umfrage JPGs/06 Betroffene Schülerinnen.jpg" alt="Balkendiagramm 1">
             </figure>
         </div>  
     </div>     
@@ -237,7 +255,8 @@
 
   <div id="erfahrungen" class="content-section">
     <h3>Erfahrungen</h3>
-    <p>Beispiele von Menschen, die Diskriminierung erlebt oder Zivilcourage gezeigt haben – auch aus dem Schulalltag.</p>
+    <p>Beispiele von Schüler:innen, die Diskriminierung erlebt haben – aus dem Schulalltag.</p>
+    <!--
     <div class="audio-grid">
         <div class="audio-item">
           <p>Antisemitismus</p>
@@ -261,7 +280,7 @@
           </audio>
         </div>
         <div class="audio-item">
-          <p>Dick & ADS</p>
+          <p>Dick &amp; ADS</p>
           <audio controls>
             <source src="MP3/Courage Dick und ADHS.mp3" type="audio/mpeg">
             Dein Browser unterstützt das Audio-Element nicht.
@@ -310,7 +329,8 @@
           </audio>
         </div>
       </div>
-      <h3>Äußerungen die Schüler:innen in der Umfrage häufig getätigt haben.</h3>
+      -->
+      <p>Diese Dinge haben Schüler:innen in der Umfrage beschrieben. Die meisten Äußerungen haben wir mehrere Male gelesen.</p>
       <p>Es gibt noch deutlich mehr Äußerungen, die aufgrund ihrer Inhalte zunächst den Gremien Kollegium, SR und SER vorgestellt werden.</p>
 
       <img src="JPG/Diskriminierung am KWR.jpg" alt="Diskriminierung am KWR" style="max-width: 100%; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); margin-top: 1rem;">
@@ -318,7 +338,30 @@
     </div>
   <div id="frauenrechte" class="content-section">
     <h3>Frauenrechte &amp; Gleichbehandlung</h3>
-    <p>Globale und lokale Aspekte der Gleichstellung von Frauen, historische und aktuelle Herausforderungen.</p>
+    <p>Globale und lokale Aspekte der Gleichstellung von Frauen, historische und aktuelle Herausforderungen werden in mehreren Podcasts von verschiedenen Sprecherinnen vorgestellt .</p>
+    <div class="audio-grid">
+      <div class="audio-item">
+        <p><strong>Folge 1:</strong> In dieser Folge geht es um Care-Arbeit, das Wahlrecht für Frauen und Abtreibungen</p>
+        <audio controls>
+          <source src="MP3/Podcast Folge 1.mp3" type="audio/mpeg">
+          Dein Browser unterstützt das Audio-Element nicht.
+        </audio>
+      </div>
+      <div class="audio-item">
+        <p><strong>Folge 2:</strong> In der zweiten Folge des Podcasts geht es um Feiertage und um Frauenrechte und Gleichberechtigung in verschiedenen Ländern, darunter Afghanistan, Irak, DR Kongo, Dänemark, Schweden, Finnland, USA.</p>
+        <audio controls>
+          <source src="MP3/Podcast Folge 2.mp3" type="audio/mpeg">
+          Dein Browser unterstützt das Audio-Element nicht.
+        </audio>
+      </div>
+      <div class="audio-item">
+        <p><strong>Folge 3:</strong> In Folge 3 geht um Erfahrungen von Mädchen und Frauen am KWR und in anderen Schulen. Außerdem werden Frauenrechte, u.a. zum Mutterschutz, in Deutschland beleuchtet. Bedrückende Themen wie Femizide und Häusliche Gewalt werden diesmal ebenfalls präsentiert.</p>
+        <audio controls>
+          <source src="MP3/Podcast Folge 3.mp3" type="audio/mpeg">
+          Dein Browser unterstützt das Audio-Element nicht.
+        </audio>
+      </div>
+  </div>
   </div>
 
   <div id="courage" class="content-section">
@@ -330,15 +373,29 @@
 
   <div id="massnahmen" class="content-section">
     <h3>Maßnahmen und Anregungen am KWR</h3>
-    <p>Wie gehen wir am KWR mit Diskriminierung um? Was läuft gut, was kann verbessert werden? Ideen, Projekte, Initiativen.</p>
+    <p>Wie gehen wir am KWR mit Diskriminierung um? Was läuft gut, was kann verbessert werden? Fragen und deren Antworten, Anregungen.</p>
     <div class="image-row">
         <div class="full-width">
             <figure class="bildblock">
                 <figcaption>Welche Fragen haben Schüler:innen am Ende der Umfrage gestellt? Eine Gruppe von Schüler:innen hat diese Fragen ausgewertet und in die folgenden Kategorien geclustert. </figcaption>
-                <img src="JPG/Fragen Schülerinnen.jpeg" alt="Balkendiagramm 1">
+                <img src="JPG/Fragen Schülerinnen.jpeg" alt="Balkendiagramm 1">
             </figure>
         </div>
     </div>
+    <div class="image-row">
+      <div class="half-width">
+          <figure class="bildblock">
+              <figcaption><strong>Antworten auf Fragen</strong>, die Schüler:innen in der Umfrage gestellt haben</figcaption>
+              <img src="JPG/Fragen SuS.jpg" alt="Balkendiagramm 1">
+          </figure>
+      </div>
+      <div class="half-width">
+          <figure class="bildblock">
+              <figcaption><strong>Gesammelte Anregungen</strong> von Schüler:innen</figcaption>
+              <img src="JPG/Anregungen SuS.jpg" alt="Balkendiagramm 1">
+          </figure>
+      </div>  
+  </div> 
 </div>
 
 
