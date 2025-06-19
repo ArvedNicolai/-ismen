@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login | KWR Anti‑Diskriminierungsprojekt</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --blue-dark: #0056b3;
+      --blue: #007bff;
+      --bg: #f5f9ff;
+      --error: #d9534f;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: "Inter", sans-serif;
+    }
+
+    body {
+      background: var(--bg);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 2rem;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 12px;
+      padding: 2rem 2.5rem;
+      max-width: 400px;
+      width: 100%;
+      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 1.5rem;
+      color: var(--blue-dark);
+      font-size: 1.8rem;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 0.25rem;
+      font-weight: 700;
+    }
+
+    input[type="text"],
+    input[type="password"] {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      margin-bottom: 1rem;
+      border: 2px solid #ddd;
+      border-radius: 8px;
+      font-size: 1rem;
+      transition: border-color 0.2s;
+    }
+
+    input[type="text"]:focus,
+    input[type="password"]:focus {
+      border-color: var(--blue);
+      outline: none;
+    }
+
+    .btn {
+      display: block;
+      width: 100%;
+      background: var(--blue);
+      color: #fff;
+      border: none;
+      padding: 0.75rem 1rem;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 1.1rem;
+      cursor: pointer;
+      transition: background 0.25s ease;
+    }
+
+    .btn:hover {
+      background: var(--blue-dark);
+    }
+
+    .error-msg {
+      color: var(--error);
+      margin-top: 0.5rem;
+      text-align: center;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>Login</h1>
+    <form id="loginForm">
+      <label for="username">Name</label>
+      <input type="text" id="username" name="username" autocomplete="username" required />
+
+      <label for="password">Passwort</label>
+      <input type="password" id="password" name="password" autocomplete="current-password" required />
+
+      <button type="submit" class="btn">Anmelden</button>
+      <div class="error-msg" id="errorMsg">Name oder Passwort falsch. Bitte erneut versuchen.</div>
+    </form>
+  </div>
+
+  <script>
+    const VALID_USER = "KWR";
+    const VALID_PASS = "courage2025";
+
+    document.getElementById("loginForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+      const user = document.getElementById("username").value.trim();
+      const pass = document.getElementById("password").value;
+      if (user === VALID_USER && pass === VALID_PASS) {
+        window.location.href = "index.html"; // weiter zur Hauptseite
+      } else {
+        const errorEl = document.getElementById("errorMsg");
+        errorEl.style.display = "block";
+        // optional: Felder leeren
+        document.getElementById("password").value = "";
+      }
+    });
+  </script>
+</body>
+</html>
